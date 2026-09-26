@@ -1,0 +1,6 @@
+{
+  "name": "SETU Foundation | Environmental & Technological Upliftment",
+  "description": "Official portal of SETU Foundation for Environmental & Technological Upliftment (সেতু ফাউন্ডেশন), a registered non-profit society under Act XXI of 1860 in Dhaka, Bangladesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

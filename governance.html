@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Governance &amp; Executive Leadership | SETU Foundation</title>
+    <meta name="description" content="Meet the Executive Committee of SETU Foundation registered with RJSC Dhaka under Societies Registration Act XXI of 1860." />
+    <meta property="og:title" content="Governance & Executive Leadership | SETU Foundation" />
+    <meta property="og:description" content="Profiles of the 7-member Executive Committee and statutory institutional organogram of SETU Foundation." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: {
+                900: '#064e3b',
+                950: '#022c22',
+              },
+              emerald: {
+                400: '#34d399',
+                500: '#10b981',
+                600: '#059669',
+                700: '#047857',
+                800: '#065f46',
+                900: '#064e3b',
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+              bengali: ['"Noto Serif Bengali"', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/src/index.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="bg-[#050b09] text-stone-200 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200 flex flex-col min-h-screen overflow-x-hidden">
+    
+    <!-- Top Bar Navigation (Dark Glassmorphic) -->
+    <header class="sticky top-0 z-40 bg-[#050b09]/80 backdrop-blur-xl border-b border-emerald-900/30 transition-all duration-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-forest-900 text-white flex items-center justify-center font-bold shadow-lg shadow-emerald-950/30 border border-emerald-500/30 group-hover:scale-105 transition-transform">
+              <i data-lucide="sprout" class="w-6 h-6 text-emerald-300"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xl font-extrabold tracking-tight text-white">SETU Foundation</span>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-400 font-semibold border border-emerald-800/60 font-bengali">সেতু</span>
+              </div>
+              <p class="text-[11px] font-medium tracking-tight text-emerald-300/60 uppercase hidden sm:block">Environmental &amp; Technological Upliftment</p>
+            </div>
+          </a>
+
+          <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-300">
+            <a href="index.html" class="hover:text-emerald-300 transition-colors pb-1">Home</a>
+            <a href="about.html" class="hover:text-emerald-300 transition-colors pb-1">About Us</a>
+            <a href="programs.html" class="hover:text-emerald-300 transition-colors pb-1">Programs</a>
+            <a href="governance.html" class="text-emerald-400 font-bold border-b-2 border-emerald-500 pb-1">Governance</a>
+            <a href="impact.html" class="hover:text-emerald-300 transition-colors pb-1">Impact &amp; Reports</a>
+            <a href="contact.html" class="hover:text-emerald-300 transition-colors pb-1">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <a href="donate.html" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 rounded-xl transition-all shadow-lg shadow-emerald-950/50 hover:shadow-emerald-900/70 border border-emerald-400/30 hover:-translate-y-0.5 whitespace-nowrap">
+              <i data-lucide="heart" class="w-3.5 h-3.5 text-white"></i>
+              <span>Support the Mission</span>
+            </a>
+
+            <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 rounded-xl text-stone-300 hover:bg-emerald-950/60 hover:text-white border border-emerald-900/40 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" aria-label="Open Navigation Menu">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Backdrop -->
+    <div id="drawer-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-[#070e0b] border-l border-emerald-900/40 z-50 transform translate-x-full transition-transform duration-300 ease-out shadow-2xl flex flex-col">
+      <div class="p-6 border-b border-emerald-900/40 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold">
+            <i data-lucide="sprout" class="w-4 h-4"></i>
+          </div>
+          <span class="font-bold text-white">SETU Foundation</span>
+        </div>
+        <button id="close-menu-btn" class="p-2 rounded-lg text-stone-400 hover:text-white hover:bg-emerald-950" aria-label="Close Navigation">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="py-4 px-6 flex-1 overflow-y-auto space-y-1">
+        <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="home" class="w-4 h-4"></i> Home
+        </a>
+        <a href="about.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="info" class="w-4 h-4"></i> About Us &amp; Legal Charter
+        </a>
+        <a href="programs.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="layers" class="w-4 h-4"></i> Programs &amp; Initiatives
+        </a>
+        <a href="governance.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-emerald-400 font-bold bg-emerald-950/50 border border-emerald-900/50 text-sm">
+          <i data-lucide="shield-check" class="w-4 h-4"></i> Executive Committee
+        </a>
+        <a href="impact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Impact &amp; Disclosures
+        </a>
+        <a href="donate.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="heart-handshake" class="w-4 h-4"></i> Donate &amp; Bank Details
+        </a>
+        <a href="contact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="mail" class="w-4 h-4"></i> Contact &amp; Volunteer
+        </a>
+      </div>
+
+      <div class="p-6 border-t border-emerald-900/40 bg-[#040806] space-y-3">
+        <a href="donate.html" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-950/60">
+          <i data-lucide="heart" class="w-4 h-4 text-emerald-200"></i> Donate Directly
+        </a>
+        <p class="text-[11px] text-stone-500 text-center">Registered Non-Profit under Act XXI of 1860<br>Dhaka, Bangladesh</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      
+      <!-- HERO BANNER -->
+      <section class="bg-[#06100c] text-white py-16 lg:py-24 relative overflow-hidden border-b border-emerald-900/30">
+        <canvas class="ambient-canvas absolute inset-0 w-full h-full pointer-events-auto z-0 opacity-70"></canvas>
+        <div class="absolute top-1/2 right-1/4 w-80 h-80 bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none animate-pulse-glow"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-emerald-400 mb-3 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 shadow-sm">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <span>Fiduciary Stewards &middot; RJSC Registered</span>
+            </span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+              Institutional Governance &amp; Executive Leadership
+            </h1>
+            <p class="mt-4 text-stone-300 text-base sm:text-lg leading-relaxed">
+              SETU Foundation operates under rigorous constitutional oversight, non-political bylaws, and fiduciary duty mandated by the Societies Registration Act, 1860.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSTITUTIONAL GOVERNANCE STATEMENT -->
+      <section class="py-20 bg-[#050b09] border-b border-emerald-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div class="lg:col-span-7 space-y-4">
+              <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Governance Statement</span>
+              <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+                Ethical Stewardship and Legal Accountability
+              </h2>
+              <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                The Executive Committee functions as the supreme administrative body of SETU Foundation, entrusted by the General Assembly with the strategic stewardship of all ecological, technological, and emergency humanitarian programs across Bangladesh.
+              </p>
+              
+              <div class="space-y-3 pt-2 text-xs sm:text-sm text-stone-300">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-lg bg-emerald-950 border border-emerald-700/40 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white">Quorum &amp; Democratic Deliberation:</strong>
+                    <span>Bi-monthly statutory meetings require a minimum two-thirds majority quorum for all budget expenditures and project ratifications.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-lg bg-emerald-950 border border-emerald-700/40 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white">Honorable Voluntary Service:</strong>
+                    <span>All Executive Committee officers serve without financial salary, honorarium, or personal commercial interest to eliminate conflicts of interest.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-lg bg-emerald-950 border border-emerald-700/40 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white">Statutory Annual General Meeting (AGM):</strong>
+                    <span>Mandated under Act XXI of 1860, our comprehensive audit reports and operational minutes are submitted annually to the RJSC Dhaka registrar.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fiduciary Certification Badge (Dark Glass) -->
+            <div class="lg:col-span-5 p-8 rounded-3xl dark-glass-card border border-emerald-500/25 shadow-2xl space-y-4 tilt-card">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-950 border border-emerald-600/40 text-emerald-400 flex items-center justify-center font-bold">
+                  <i data-lucide="scale" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-white">RJSC Fiduciary Certificate</h3>
+                  <p class="text-xs text-stone-400 font-mono">Record: #2026409754</p>
+                </div>
+              </div>
+              <p class="text-xs text-stone-300 leading-relaxed">
+                Registered under the authority of the Registrar of Joint Stock Companies and Firms, Dhaka. The Secretariat maintains an open ledger of all financial inflows and verified field disbursements.
+              </p>
+              <div class="pt-2 border-t border-emerald-900/40 text-xs font-mono text-emerald-400 space-y-1">
+                <div>&bull; Society Act: XXI of 1860</div>
+                <div>&bull; Submission: #2026423830</div>
+                <div>&bull; Jurisdiction: Dhaka, Bangladesh</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- LEADERSHIP GRID (7 EXECUTIVE COMMITTEE MEMBERS) -->
+      <section class="py-24 bg-[#040806] border-b border-emerald-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="max-w-3xl mb-14">
+            <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Executive Committee Roster</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Executive Leadership (2026&ndash;2028)</h2>
+            <p class="text-stone-400 text-sm mt-2">
+              The seven officially designated officers constituting the Executive Committee of SETU Foundation registered with RJSC Dhaka.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 1. Md. Rezaul Karim – President -->
+            <div class="dark-glass-card rounded-3xl border border-emerald-900/50 hover:border-emerald-500/40 p-6 flex flex-col justify-between tilt-card transition-all group">
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  <!-- Photo Avatar Frame with White Background Remover -->
+                  <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-b from-emerald-950 via-[#071710] to-[#040b08] border-2 border-emerald-500/40 shadow-xl overflow-hidden p-0.5 shrink-0">
+                    <img 
+                      src="/images/members/Rezaul_Karim_Picture.jpeg"
+                      data-member-photo="Rezaul_Karim_Picture.jpeg"
+                      data-fallback-svg="/images/members/rezaul_vector.svg"
+                      alt="Md. Rezaul Karim - President"
+                      class="member-photo w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      onerror="this.onerror=null; this.src='/images/members/rezaul_vector.svg';"
+                    />
+                    <button type="button" class="upload-photo-btn absolute inset-0 bg-black/60 backdrop-blur-xs text-white opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[9px] font-sans font-bold transition-opacity cursor-pointer" data-target-photo="Rezaul_Karim_Picture.jpeg" title="Upload or change official photo">
+                      <i data-lucide="camera" class="w-3.5 h-3.5 mb-0.5 text-emerald-400"></i>
+                      <span>Update</span>
+                    </button>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Md. Rezaul Karim</h3>
+                    <span class="inline-block text-xs font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-800/60 px-2.5 py-0.5 rounded-full mt-0.5">
+                      President
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-xs text-stone-300 leading-relaxed">
+                  Steers institutional strategy, high-level non-governmental alliances, and ecological policy advocacy. Brings visionary leadership to ensure climate adaptation projects meet long-term biodiversity preservation standards across the delta.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center justify-between text-xs text-stone-500 font-mono">
+                <span>Executive Office</span>
+                <span class="text-emerald-400 font-bold">Officer 01 / 07</span>
+              </div>
+            </div>
+
+            <!-- 2. Mst Sarifa Zahan Siddika – Vice President -->
+            <div class="dark-glass-card rounded-3xl border border-emerald-900/50 hover:border-emerald-500/40 p-6 flex flex-col justify-between tilt-card transition-all group">
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  <!-- Photo Avatar Frame with White Background Remover -->
+                  <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-b from-emerald-950 via-[#071710] to-[#040b08] border-2 border-emerald-500/40 shadow-xl overflow-hidden p-0.5 shrink-0">
+                    <img 
+                      src="/images/members/Sarifa_Zahan_Picture.jpeg"
+                      data-member-photo="Sarifa_Zahan_Picture.jpeg"
+                      data-fallback-svg="/images/members/sarifa_vector.svg"
+                      alt="Mst Sarifa Zahan Siddika - Vice President"
+                      class="member-photo w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      onerror="this.onerror=null; this.src='/images/members/sarifa_vector.svg';"
+                    />
+                    <button type="button" class="upload-photo-btn absolute inset-0 bg-black/60 backdrop-blur-xs text-white opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[9px] font-sans font-bold transition-opacity cursor-pointer" data-target-photo="Sarifa_Zahan_Picture.jpeg" title="Upload or change official photo">
+                      <i data-lucide="camera" class="w-3.5 h-3.5 mb-0.5 text-emerald-400"></i>
+                      <span>Update</span>
+                    </button>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Mst Sarifa Zahan Siddika</h3>
+                    <span class="inline-block text-xs font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-800/60 px-2.5 py-0.5 rounded-full mt-0.5">
+                      Vice President
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-xs text-stone-300 leading-relaxed">
+                  Directs community mobilization, women's inclusion in technology training, and educational curriculum standards. Passionate advocate for empowering rural female students through digital skills and community leadership programs.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center justify-between text-xs text-stone-500 font-mono">
+                <span>Executive Office</span>
+                <span class="text-emerald-400 font-bold">Officer 02 / 07</span>
+              </div>
+            </div>
+
+            <!-- 3. Md. Jubayer Islam Fahad – General Secretary -->
+            <div class="dark-glass-card rounded-3xl border-2 border-emerald-500/40 ring-2 ring-emerald-500/20 p-6 flex flex-col justify-between tilt-card transition-all group">
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  <!-- Photo Avatar Frame with White Background Remover -->
+                  <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-b from-forest-900 via-[#071710] to-[#040b08] border-2 border-emerald-400/60 shadow-xl overflow-hidden p-0.5 shrink-0">
+                    <img 
+                      src="/images/members/Jubayer_Fahad_Picture.jpeg"
+                      data-member-photo="Jubayer_Fahad_Picture.jpeg"
+                      data-fallback-svg="/images/members/jubayer_vector.svg"
+                      alt="Md. Jubayer Islam Fahad - General Secretary"
+                      class="member-photo w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      onerror="this.onerror=null; this.src='/images/members/jubayer_vector.svg';"
+                    />
+                    <button type="button" class="upload-photo-btn absolute inset-0 bg-black/60 backdrop-blur-xs text-white opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[9px] font-sans font-bold transition-opacity cursor-pointer" data-target-photo="Jubayer_Fahad_Picture.jpeg" title="Upload or change official photo">
+                      <i data-lucide="camera" class="w-3.5 h-3.5 mb-0.5 text-emerald-400"></i>
+                      <span>Update</span>
+                    </button>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Md. Jubayer Islam Fahad</h3>
+                    <span class="inline-block text-xs font-bold text-emerald-300 bg-emerald-950/90 border border-emerald-600/60 px-2.5 py-0.5 rounded-full mt-0.5">
+                      General Secretary
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-xs text-stone-300 leading-relaxed">
+                  Principal executive administrator of SETU Foundation. Oversees statutory compliance with the RJSC, coordinates nationwide field volunteer teams, orchestrates tech bootcamps, and directs technological system architecture.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center justify-between text-xs text-stone-500 font-mono">
+                <span>Secretariat Head</span>
+                <span class="text-emerald-400 font-bold">Officer 03 / 07</span>
+              </div>
+            </div>
+
+            <!-- 4. Md. Refat Mondol Sinha – Joint General Secretary -->
+            <div class="dark-glass-card rounded-3xl border border-emerald-900/50 hover:border-teal-500/40 p-6 flex flex-col justify-between tilt-card transition-all group">
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  <!-- Photo Avatar Frame with White Background Remover -->
+                  <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-b from-teal-950 via-[#071710] to-[#040b08] border-2 border-teal-500/40 shadow-xl overflow-hidden p-0.5 shrink-0">
+                    <img 
+                      src="/images/members/Refat_mondol_Sinha_Picture.jpeg"
+                      data-member-photo="Refat_mondol_Sinha_Picture.jpeg"
+                      data-fallback-svg="/images/members/refat_vector.svg"
+                      alt="Md. Refat Mondol Sinha - Joint General Secretary"
+                      class="member-photo w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      onerror="this.onerror=null; this.src='/images/members/refat_vector.svg';"
+                    />
+                    <button type="button" class="upload-photo-btn absolute inset-0 bg-black/60 backdrop-blur-xs text-white opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[9px] font-sans font-bold transition-opacity cursor-pointer" data-target-photo="Refat_mondol_Sinha_Picture.jpeg" title="Upload or change official photo">
+                      <i data-lucide="camera" class="w-3.5 h-3.5 mb-0.5 text-teal-400"></i>
+                      <span>Update</span>
+                    </button>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Md. Refat Mondol Sinha</h3>
+                    <span class="inline-block text-xs font-bold text-teal-300 bg-teal-950/80 border border-teal-800/60 px-2.5 py-0.5 rounded-full mt-0.5">
+                      Joint General Secretary
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-xs text-stone-300 leading-relaxed">
+                  Leads field deployment logistics, relief convoy coordination, and multi-district volunteer management. Oversees emergency disaster response teams deployed to marooned riverine communities during seasonal flooding.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center justify-between text-xs text-stone-500 font-mono">
+                <span>Field Logistics</span>
+                <span class="text-teal-400 font-bold">Officer 04 / 07</span>
+              </div>
+            </div>
+
+            <!-- 5. Fahmida Haque Aboni – Treasurer -->
+            <div class="dark-glass-card rounded-3xl border border-emerald-900/50 hover:border-amber-500/40 p-6 flex flex-col justify-between tilt-card transition-all group">
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  <!-- Photo Avatar Frame with White Background Remover -->
+                  <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-b from-amber-950 via-[#071710] to-[#040b08] border-2 border-amber-500/40 shadow-xl overflow-hidden p-0.5 shrink-0">
+                    <img 
+                      src="/images/members/Fahmida_Aboni_Picture.jpeg"
+                      data-member-photo="Fahmida_Aboni_Picture.jpeg"
+                      data-fallback-svg="/images/members/fahmida_vector.svg"
+                      alt="Fahmida Haque Aboni - Treasurer"
+                      class="member-photo w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      onerror="this.onerror=null; this.src='/images/members/fahmida_vector.svg';"
+                    />
+                    <button type="button" class="upload-photo-btn absolute inset-0 bg-black/60 backdrop-blur-xs text-white opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[9px] font-sans font-bold transition-opacity cursor-pointer" data-target-photo="Fahmida_Aboni_Picture.jpeg" title="Upload or change official photo">
+                      <i data-lucide="camera" class="w-3.5 h-3.5 mb-0.5 text-amber-400"></i>
+                      <span>Update</span>
+                    </button>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Fahmida Haque Aboni</h3>
+                    <span class="inline-block text-xs font-bold text-amber-300 bg-amber-950/80 border border-amber-800/60 px-2.5 py-0.5 rounded-full mt-0.5">
+                      Treasurer
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-xs text-stone-300 leading-relaxed">
+                  Custodian of all institutional funds, donation ledgers, and formal disbursements. Coordinates statutory audits with external chartered accountancy firms and publishes public transparency statements.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center justify-between text-xs text-stone-500 font-mono">
+                <span>Finance &amp; Audit</span>
+                <span class="text-amber-400 font-bold">Officer 05 / 07</span>
+              </div>
+            </div>
+
+            <!-- 6. Md. Imran Shahriar – Executive Member -->
+            <div class="dark-glass-card rounded-3xl border border-emerald-900/50 hover:border-emerald-500/40 p-6 flex flex-col justify-between tilt-card transition-all group">
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  <!-- Photo Avatar Frame with White Background Remover -->
+                  <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-b from-[#0e1c16] via-[#071710] to-[#040b08] border-2 border-emerald-700/40 shadow-xl overflow-hidden p-0.5 shrink-0">
+                    <img 
+                      src="/images/members/Imran_Shahriar_Picture.jpeg"
+                      data-member-photo="Imran_Shahriar_Picture.jpeg"
+                      data-fallback-svg="/images/members/imran_vector.svg"
+                      alt="Md. Imran Shahriar - Executive Member"
+                      class="member-photo w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      onerror="this.onerror=null; this.src='/images/members/imran_vector.svg';"
+                    />
+                    <button type="button" class="upload-photo-btn absolute inset-0 bg-black/60 backdrop-blur-xs text-white opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[9px] font-sans font-bold transition-opacity cursor-pointer" data-target-photo="Imran_Shahriar_Picture.jpeg" title="Upload or change official photo">
+                      <i data-lucide="camera" class="w-3.5 h-3.5 mb-0.5 text-emerald-400"></i>
+                      <span>Update</span>
+                    </button>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Md. Imran Shahriar</h3>
+                    <span class="inline-block text-xs font-bold text-stone-300 bg-stone-900 border border-stone-700 px-2.5 py-0.5 rounded-full mt-0.5">
+                      Executive Member
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-xs text-stone-300 leading-relaxed">
+                  Specializes in hardware acquisition, student tech lab installations, and digital skills curriculum evaluation. Manages partner relationships with technical schools and youth volunteer clubs in metropolitan Dhaka.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center justify-between text-xs text-stone-500 font-mono">
+                <span>Executive Council</span>
+                <span class="text-stone-400 font-bold">Officer 06 / 07</span>
+              </div>
+            </div>
+
+            <!-- 7. Md. Minhajul Islam – Executive Member -->
+            <div class="dark-glass-card rounded-3xl border border-emerald-900/50 hover:border-emerald-500/40 p-6 flex flex-col justify-between md:col-span-2 lg:col-span-1 tilt-card transition-all group">
+              <div>
+                <div class="flex items-center gap-4 mb-4">
+                  <!-- Photo Avatar Frame with White Background Remover -->
+                  <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-b from-[#0e1c16] via-[#071710] to-[#040b08] border-2 border-emerald-700/40 shadow-xl overflow-hidden p-0.5 shrink-0">
+                    <img 
+                      src="/images/members/Minhajul_Picture.jpeg"
+                      data-member-photo="Minhajul_Picture.jpeg"
+                      data-fallback-svg="/images/members/minhajul_vector.svg"
+                      alt="Md. Minhajul Islam - Executive Member"
+                      class="member-photo w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105"
+                      onerror="this.onerror=null; this.src='/images/members/minhajul_vector.svg';"
+                    />
+                    <button type="button" class="upload-photo-btn absolute inset-0 bg-black/60 backdrop-blur-xs text-white opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center text-[9px] font-sans font-bold transition-opacity cursor-pointer" data-target-photo="Minhajul_Picture.jpeg" title="Upload or change official photo">
+                      <i data-lucide="camera" class="w-3.5 h-3.5 mb-0.5 text-emerald-400"></i>
+                      <span>Update</span>
+                    </button>
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-extrabold text-white">Md. Minhajul Islam</h3>
+                    <span class="inline-block text-xs font-bold text-stone-300 bg-stone-900 border border-stone-700 px-2.5 py-0.5 rounded-full mt-0.5">
+                      Executive Member
+                    </span>
+                  </div>
+                </div>
+
+                <p class="text-xs text-stone-300 leading-relaxed">
+                  Focuses on environmental field site scouting, mangrove survival monitoring, and youth climate volunteer engagement across southwestern coastal belts and riverine embankments.
+                </p>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-emerald-900/30 flex items-center justify-between text-xs text-stone-500 font-mono">
+                <span>Executive Council</span>
+                <span class="text-stone-400 font-bold">Officer 07 / 07</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ORGANIZATIONAL ORGANOGRAM (DARK HIERARCHY) -->
+      <section class="py-24 bg-[#060c09] border-b border-emerald-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Structural Hierarchy</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Organizational Organogram</h2>
+            <p class="text-stone-400 text-sm mt-2">
+              Statutory flow of governance from the sovereign General Assembly to grassroots field coordinators.
+            </p>
+          </div>
+
+          <!-- Organogram Hierarchy Nodes in Dark Theme -->
+          <div class="max-w-4xl mx-auto flex flex-col items-center">
+            
+            <!-- Tier 1: General Assembly -->
+            <div class="w-full max-w-md p-5 rounded-2xl bg-[#0d1f18] text-white text-center shadow-xl border border-emerald-500/40">
+              <span class="text-[10px] uppercase font-mono tracking-widest text-emerald-400 font-bold">Supreme Sovereign Body</span>
+              <h3 class="text-lg font-extrabold">General Assembly</h3>
+              <p class="text-xs text-stone-300 mt-0.5">All registered institutional members &middot; Elects leadership at AGM</p>
+            </div>
+
+            <!-- Down Connector -->
+            <div class="w-0.5 h-8 bg-emerald-700/60"></div>
+
+            <!-- Tier 2: Executive Committee -->
+            <div class="w-full max-w-lg p-5 rounded-2xl bg-gradient-to-r from-emerald-950 via-[#0a2318] to-emerald-950 text-white text-center shadow-xl border border-emerald-400/50">
+              <span class="text-[10px] uppercase font-mono tracking-widest text-emerald-300 font-bold">Statutory Governing Body</span>
+              <h3 class="text-lg font-extrabold">Executive Committee (7 Officers)</h3>
+              <p class="text-xs text-emerald-200/80 mt-0.5">
+                President, Vice President, General Secretary, Joint Gen Sec, Treasurer &amp; Executive Members
+              </p>
+            </div>
+
+            <div class="w-0.5 h-8 bg-emerald-700/60"></div>
+            <div class="w-full max-w-3xl border-t-2 border-emerald-700/60 hidden md:block"></div>
+
+            <!-- Tier 3: Specialized Project Directorates -->
+            <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 md:pt-0">
+              
+              <!-- Eco Lead -->
+              <div class="flex flex-col items-center">
+                <div class="w-0.5 h-6 bg-emerald-700/60 hidden md:block"></div>
+                <div class="w-full p-4 rounded-xl dark-glass-card border border-emerald-600/40 text-center">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-600/50 flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="trees" class="w-4 h-4"></i>
+                  </div>
+                  <h4 class="text-xs font-bold text-white">Ecological Action Desk</h4>
+                  <p class="text-[11px] text-stone-400 mt-0.5">EcoSETU, Mangroves &amp; Bio-Shields</p>
+                </div>
+              </div>
+
+              <!-- Tech Lead -->
+              <div class="flex flex-col items-center">
+                <div class="w-0.5 h-6 bg-emerald-700/60 hidden md:block"></div>
+                <div class="w-full p-4 rounded-xl dark-glass-card border border-blue-600/40 text-center">
+                  <div class="w-8 h-8 rounded-lg bg-blue-950 text-blue-400 border border-blue-600/50 flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="laptop" class="w-4 h-4"></i>
+                  </div>
+                  <h4 class="text-xs font-bold text-white">Technology Directorate</h4>
+                  <p class="text-[11px] text-stone-400 mt-0.5">TechSETU, Bootcamps &amp; Hardware Labs</p>
+                </div>
+              </div>
+
+              <!-- Relief Lead -->
+              <div class="flex flex-col items-center">
+                <div class="w-0.5 h-6 bg-emerald-700/60 hidden md:block"></div>
+                <div class="w-full p-4 rounded-xl dark-glass-card border border-amber-600/40 text-center">
+                  <div class="w-8 h-8 rounded-lg bg-amber-950 text-amber-400 border border-amber-600/50 flex items-center justify-center mx-auto mb-2">
+                    <i data-lucide="life-buoy" class="w-4 h-4"></i>
+                  </div>
+                  <h4 class="text-xs font-bold text-white">Humanitarian Relief Desk</h4>
+                  <p class="text-[11px] text-stone-400 mt-0.5">ReliefSETU, Flood Dispatches &amp; Logistics</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="w-0.5 h-8 bg-emerald-700/60"></div>
+
+            <!-- Tier 4: Grassroots Base -->
+            <div class="w-full max-w-xl p-5 rounded-2xl bg-[#081510] border border-emerald-800/50 text-center">
+              <span class="text-[10px] uppercase font-mono tracking-widest text-emerald-400">Grassroots Execution</span>
+              <h3 class="text-sm font-bold text-white">District Project Coordinators &amp; Field Volunteers</h3>
+              <p class="text-xs text-stone-400 mt-0.5">
+                Active volunteer units in Dhaka, Khulna, Sylhet, Feni, Barisal, and Rangpur
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Consistent Institutional Footer -->
+    <footer class="bg-[#030705] text-stone-400 pt-16 pb-12 border-t border-emerald-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-emerald-950">
+          
+          <div class="lg:col-span-2 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-forest-900 text-white flex items-center justify-center font-bold shadow-md shadow-emerald-950">
+                <i data-lucide="sprout" class="w-5 h-5 text-emerald-300"></i>
+              </div>
+              <div>
+                <span class="text-lg font-bold text-white tracking-tight">SETU Foundation</span>
+                <span class="block text-xs font-bengali text-emerald-400">সেতু ফাউন্ডেশন</span>
+              </div>
+            </div>
+            
+            <p class="text-xs text-stone-400 leading-relaxed max-w-sm">
+              SETU Foundation for Environmental &amp; Technological Upliftment is a registered non-profit society dedicated to ecological conservation, digital democratization, and emergency relief across Bangladesh.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-[#06100c] border border-emerald-900/50 text-[11px] text-emerald-300/90 space-y-1 font-mono">
+              <div><strong class="text-white">Legal Entity:</strong> Registered Non-Profit Society</div>
+              <div><strong class="text-white">Statutory Framework:</strong> Act XXI of 1860</div>
+              <div><strong class="text-white">Regulatory:</strong> RJSC Dhaka, Govt. of Bangladesh</div>
+              <div><strong class="text-white">Clearance Letter:</strong> 2026409754 &middot; Sub: 2026423830</div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Institutional</h4>
+            <ul class="space-y-2 text-xs">
+              <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home Portal</a></li>
+              <li><a href="about.html" class="hover:text-emerald-400 transition-colors">Mission &amp; Legal Charter</a></li>
+              <li><a href="governance.html" class="text-emerald-400 font-bold">Executive Committee</a></li>
+              <li><a href="impact.html" class="hover:text-emerald-400 transition-colors">Impact &amp; Audit Reports</a></li>
+              <li><a href="about.html#legal" class="hover:text-emerald-400 transition-colors">RJSC Compliance Matrix</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Programs</h4>
+            <ul class="space-y-2 text-xs">
+              <li><a href="programs.html#eco" class="hover:text-emerald-400 transition-colors">EcoSETU (Afforestation)</a></li>
+              <li><a href="programs.html#tech" class="hover:text-emerald-400 transition-colors">TechSETU (Coding Bootcamps)</a></li>
+              <li><a href="programs.html#relief" class="hover:text-emerald-400 transition-colors">ReliefSETU (Humanitarian)</a></li>
+              <li><a href="donate.html" class="hover:text-emerald-400 transition-colors">Bank &amp; bKash Channels</a></li>
+              <li><a href="contact.html#volunteer" class="hover:text-emerald-400 transition-colors">Volunteer Opportunities</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Secretariat</h4>
+            <div class="text-xs text-stone-400 space-y-2">
+              <p class="flex items-start gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>G-26, RH Home Centre, Farmgate, Tejgaon, Dhaka, Bangladesh</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <a href="mailto:setufoundation.bd@gmail.com" class="hover:text-white transition-colors text-emerald-400">setufoundation.bd@gmail.com</a>
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span>Sun &ndash; Thu: 9:30 AM &ndash; 6:00 PM</span>
+              </p>
+            </div>
+            
+            <!-- Newsletter Subscription -->
+            <div class="pt-2">
+              <form data-ajax-form data-form-type="newsletter" novalidate class="flex flex-col gap-1">
+                <div class="flex items-center gap-1.5">
+                  <input type="email" required placeholder="Your email dispatch" autocomplete="email" maxlength="150" spellcheck="false" class="w-full text-xs px-3 py-2 rounded-lg bg-[#07130e] border border-emerald-900 text-white placeholder-stone-500 focus:outline-none focus:border-emerald-500 transition-colors">
+                  <button type="submit" class="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none text-white text-xs font-bold transition-all shrink-0 flex items-center justify-center min-w-[38px] cursor-pointer" title="Subscribe to newsletter" aria-label="Subscribe to newsletter">
+                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+                <div class="newsletter-feedback hidden text-[11px] leading-tight transition-all duration-200"></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+          <p>&copy; 2026 SETU Foundation for Environmental &amp; Technological Upliftment. All rights reserved.</p>
+          <div class="flex items-center gap-6 text-stone-400">
+            <span>Non-Political &middot; Non-Profit Society</span>
+            <span>Dhaka, Bangladesh</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Shared Javascript -->
+    <script type="module" src="/src/site.js"></script>
+  </body>
+</html>

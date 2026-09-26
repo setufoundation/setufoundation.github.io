@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate &amp; Institutional Support | SETU Foundation</title>
+    <meta name="description" content="Support SETU Foundation's climate afforestation, youth digital literacy bootcamps, and emergency disaster relief across Bangladesh." />
+    <meta property="og:title" content="Donate & Institutional Support | SETU Foundation" />
+    <meta property="og:description" content="Interactive donation tiers, official Sonali Bank PLC account details, and MFS (bKash/Nagad) giving channels." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: {
+                900: '#064e3b',
+                950: '#022c22',
+              },
+              emerald: {
+                400: '#34d399',
+                500: '#10b981',
+                600: '#059669',
+                700: '#047857',
+                800: '#065f46',
+                900: '#064e3b',
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+              bengali: ['"Noto Serif Bengali"', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/src/index.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="bg-[#050b09] text-stone-200 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200 flex flex-col min-h-screen overflow-x-hidden">
+    
+    <!-- Top Bar Navigation (Dark Glassmorphic) -->
+    <header class="sticky top-0 z-40 bg-[#050b09]/80 backdrop-blur-xl border-b border-emerald-900/30 transition-all duration-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-forest-900 text-white flex items-center justify-center font-bold shadow-lg shadow-emerald-950/30 border border-emerald-500/30 group-hover:scale-105 transition-transform">
+              <i data-lucide="sprout" class="w-6 h-6 text-emerald-300"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xl font-extrabold tracking-tight text-white">SETU Foundation</span>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-400 font-semibold border border-emerald-800/60 font-bengali">সেতু</span>
+              </div>
+              <p class="text-[11px] font-medium tracking-tight text-emerald-300/60 uppercase hidden sm:block">Environmental &amp; Technological Upliftment</p>
+            </div>
+          </a>
+
+          <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-300">
+            <a href="index.html" class="hover:text-emerald-300 transition-colors pb-1">Home</a>
+            <a href="about.html" class="hover:text-emerald-300 transition-colors pb-1">About Us</a>
+            <a href="programs.html" class="hover:text-emerald-300 transition-colors pb-1">Programs</a>
+            <a href="governance.html" class="hover:text-emerald-300 transition-colors pb-1">Governance</a>
+            <a href="impact.html" class="hover:text-emerald-300 transition-colors pb-1">Impact &amp; Reports</a>
+            <a href="contact.html" class="hover:text-emerald-300 transition-colors pb-1">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <a href="donate.html" class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 rounded-xl transition-all shadow-lg shadow-emerald-950/50 hover:shadow-emerald-900/70 border border-emerald-400/40 ring-2 ring-emerald-500/30 whitespace-nowrap">
+              <i data-lucide="heart" class="w-3.5 h-3.5 text-white"></i>
+              <span>Donate Now</span>
+            </a>
+
+            <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 rounded-xl text-stone-300 hover:bg-emerald-950/60 hover:text-white border border-emerald-900/40 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" aria-label="Open Navigation Menu">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Backdrop -->
+    <div id="drawer-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-[#070e0b] border-l border-emerald-900/40 z-50 transform translate-x-full transition-transform duration-300 ease-out shadow-2xl flex flex-col">
+      <div class="p-6 border-b border-emerald-900/40 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold">
+            <i data-lucide="sprout" class="w-4 h-4"></i>
+          </div>
+          <span class="font-bold text-white">SETU Foundation</span>
+        </div>
+        <button id="close-menu-btn" class="p-2 rounded-lg text-stone-400 hover:text-white hover:bg-emerald-950" aria-label="Close Navigation">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="py-4 px-6 flex-1 overflow-y-auto space-y-1">
+        <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="home" class="w-4 h-4"></i> Home
+        </a>
+        <a href="about.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="info" class="w-4 h-4"></i> About Us &amp; Legal Charter
+        </a>
+        <a href="programs.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="layers" class="w-4 h-4"></i> Programs &amp; Initiatives
+        </a>
+        <a href="governance.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="shield-check" class="w-4 h-4"></i> Executive Committee
+        </a>
+        <a href="impact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Impact &amp; Disclosures
+        </a>
+        <a href="donate.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-emerald-400 font-bold bg-emerald-950/50 border border-emerald-900/50 text-sm">
+          <i data-lucide="heart-handshake" class="w-4 h-4"></i> Donate &amp; Bank Details
+        </a>
+        <a href="contact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="mail" class="w-4 h-4"></i> Contact &amp; Volunteer
+        </a>
+      </div>
+
+      <div class="p-6 border-t border-emerald-900/40 bg-[#040806] space-y-3">
+        <a href="donate.html" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-950/60">
+          <i data-lucide="heart" class="w-4 h-4 text-emerald-200"></i> Donate Directly
+        </a>
+        <p class="text-[11px] text-stone-500 text-center">Registered Non-Profit under Act XXI of 1860<br>Dhaka, Bangladesh</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      
+      <!-- HERO BANNER WITH AMBIENT PARTICLES -->
+      <section class="bg-[#06100c] text-white py-16 lg:py-24 relative overflow-hidden border-b border-emerald-900/30">
+        <canvas class="ambient-canvas absolute inset-0 w-full h-full pointer-events-auto z-0 opacity-70"></canvas>
+        <div class="absolute top-1/2 right-1/3 w-80 h-80 bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none animate-pulse-glow"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-emerald-400 mb-3 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 shadow-sm">
+              <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+              <span>100% Direct Field Allocation</span>
+            </span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+              Fuel the Bridge Between Nature &amp; Opportunity
+            </h1>
+            <p class="mt-4 text-stone-300 text-base sm:text-lg leading-relaxed">
+              Every taka directly sponsors saplings for cyclone bio-shields, opens digital coding bootcamps for marginal youth, or rushes clean water to flood victims.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE DONATION TIER CALCULATOR (DARK GLASS) -->
+      <section class="py-20 bg-[#050b09] border-b border-emerald-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="max-w-4xl mx-auto dark-glass-card rounded-3xl border border-emerald-500/25 p-6 sm:p-10 shadow-2xl tilt-card">
+            
+            <!-- Frequency Selector -->
+            <div class="flex items-center justify-between flex-wrap gap-4 pb-8 border-b border-emerald-900/40">
+              <div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white">Select Donation Amount</h2>
+                <p class="text-xs text-stone-400 mt-0.5">Explore how your giving transforms communities on the ground.</p>
+              </div>
+
+              <div class="flex items-center p-1 bg-[#091712] border border-emerald-900/60 rounded-xl">
+                <button type="button" data-freq="One-Time" class="freq-btn px-4 py-2 text-xs font-bold rounded-lg transition-all bg-emerald-600 text-white shadow-md">
+                  One-Time Gift
+                </button>
+                <button type="button" data-freq="Monthly" class="freq-btn px-4 py-2 text-xs font-bold rounded-lg transition-all text-stone-400 hover:text-white">
+                  Monthly Sustainer
+                </button>
+              </div>
+            </div>
+
+            <!-- Pre-set Tiers -->
+            <div class="py-8 space-y-6">
+              <label class="block text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">Recommended Giving Tiers</label>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                
+                <!-- Tier 1: 500 BDT -->
+                <button type="button" data-amount="500" class="donation-tier-btn p-5 rounded-2xl border border-emerald-900/50 bg-[#07130e] text-stone-300 text-left hover:border-emerald-500 transition-all flex flex-col justify-between glow-border">
+                  <div>
+                    <span class="text-2xl font-extrabold font-mono text-white">500 <span class="text-sm font-sans font-bold text-stone-400">BDT</span></span>
+                    <span class="block text-xs font-semibold text-emerald-400 mt-1">Mangrove Seedlings</span>
+                  </div>
+                  <p class="text-xs text-stone-400 mt-3 pt-3 border-t border-emerald-900/40">
+                    Plants 10 mangrove saplings with nursery care.
+                  </p>
+                </button>
+
+                <!-- Tier 2: 1,500 BDT (Active) -->
+                <button type="button" data-amount="1500" class="donation-tier-btn p-5 rounded-2xl border-2 border-emerald-500 bg-emerald-950/70 text-emerald-300 text-left transition-all ring-2 ring-emerald-500/30 flex flex-col justify-between">
+                  <div>
+                    <span class="text-2xl font-extrabold font-mono text-white">1,500 <span class="text-sm font-sans font-bold text-emerald-400">BDT</span></span>
+                    <span class="block text-xs font-semibold text-emerald-300 mt-1">Student Tech Stipend</span>
+                  </div>
+                  <p class="text-xs text-emerald-200/80 mt-3 pt-3 border-t border-emerald-800/60">
+                    Funds 1 youth for a 4-week coding bootcamp module.
+                  </p>
+                </button>
+
+                <!-- Tier 3: 5,000 BDT -->
+                <button type="button" data-amount="5000" class="donation-tier-btn p-5 rounded-2xl border border-emerald-900/50 bg-[#07130e] text-stone-300 text-left hover:border-emerald-500 transition-all flex flex-col justify-between glow-border">
+                  <div>
+                    <span class="text-2xl font-extrabold font-mono text-white">5,000 <span class="text-sm font-sans font-bold text-stone-400">BDT</span></span>
+                    <span class="block text-xs font-semibold text-emerald-400 mt-1">Flood Aid Lifeline</span>
+                  </div>
+                  <p class="text-xs text-stone-400 mt-3 pt-3 border-t border-emerald-900/40">
+                    Supplies 2 ceramic water filters + emergency family rations.
+                  </p>
+                </button>
+
+              </div>
+
+              <!-- Custom Amount Input -->
+              <div>
+                <label for="custom-donation-input" class="block text-xs font-medium text-stone-400 mb-2">Or Enter Custom Amount (BDT):</label>
+                <div class="relative max-w-xs">
+                  <input type="number" id="custom-donation-input" min="100" step="50" placeholder="e.g. 2500" class="w-full pl-4 pr-16 py-3 rounded-xl border border-emerald-900 bg-[#07130e] focus:outline-none focus:ring-2 focus:ring-emerald-500 font-mono text-base text-white placeholder-stone-600">
+                  <span class="absolute right-4 top-3.5 text-xs font-bold text-emerald-400">BDT</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Real-time Impact Box (Dark Glass) -->
+            <div class="p-6 rounded-2xl bg-[#07130e] border border-emerald-800/40 shadow-inner space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Tangible Outcome Calculator</span>
+                <span id="summary-amount" class="text-sm font-extrabold font-mono text-emerald-300">1,500 BDT</span>
+              </div>
+              <p id="donation-impact-text" class="text-sm text-stone-300 leading-relaxed">
+                <strong>1 Student Tech Scholarship:</strong> Provides a 4-week coding bootcamp stipend, lab internet access, and learning curriculum materials for underprivileged youth.
+              </p>
+            </div>
+
+            <!-- Action Prompt -->
+            <div class="mt-8 pt-6 border-t border-emerald-900/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p class="text-xs text-stone-400">
+                Proceed by transferring via official Sonali Bank PLC or MFS channels, or record your support pledge directly in your verified Firestore profile.
+              </p>
+              <div class="flex flex-wrap items-center gap-3 shrink-0">
+                <button id="btn-record-pledge" type="button" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-xs shadow-xl shadow-emerald-950/80 border border-emerald-400/40 transition-all hover:scale-105 active:scale-95 cursor-pointer">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-emerald-100"></i>
+                  <span>Record Pledge (Firestore)</span>
+                </button>
+                <a href="#channels" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-stone-900/90 hover:bg-stone-800 text-stone-300 hover:text-white font-bold text-xs border border-emerald-900/50 shadow-md transition-colors">
+                  <span>View Bank Info</span>
+                  <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-emerald-300"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PAYMENT METHOD CARDS (DARK BANK & MFS) -->
+      <section id="channels" class="py-24 bg-[#040806] border-b border-emerald-900/30 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="max-w-3xl mb-14">
+            <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Official Donation Channels</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Institutional Bank &amp; Mobile Financial Services</h2>
+            <p class="text-stone-400 text-sm mt-1">
+              All accounts are held directly under the legal name of SETU Foundation. Never transfer to personal unverified accounts.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Channel 1: Institutional Bank Transfer -->
+            <div class="dark-glass-card rounded-3xl border border-emerald-500/25 p-8 shadow-2xl space-y-6 tilt-card">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-950 border border-emerald-600/40 text-emerald-400 flex items-center justify-center font-bold">
+                  <i data-lucide="landmark" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white">Institutional Bank Transfer</h3>
+                  <p class="text-xs text-stone-400">Sonali Bank PLC (Corporate &amp; General Inflows)</p>
+                </div>
+              </div>
+
+              <div class="space-y-3.5 text-xs text-stone-300 pt-2 font-mono">
+                <div class="p-3.5 rounded-xl bg-[#081510] border border-emerald-900/50 flex items-center justify-between">
+                  <div>
+                    <span class="text-stone-400 font-sans block text-[11px]">Account Title:</span>
+                    <strong class="text-white font-sans text-xs">SETU Foundation for Environmental &amp; Technological Upliftment</strong>
+                  </div>
+                  <button data-copy-target="SETU Foundation for Environmental & Technological Upliftment" class="p-2 rounded-lg text-emerald-400 hover:bg-emerald-950 transition-colors" title="Copy Account Title">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-[#081510] border border-emerald-900/50 flex items-center justify-between">
+                  <div>
+                    <span class="text-stone-400 font-sans block text-[11px]">Bank Name &amp; Branch:</span>
+                    <strong class="text-white font-sans text-xs">Sonali Bank PLC &middot; Farmgate Branch, Dhaka</strong>
+                  </div>
+                  <button data-copy-target="Sonali Bank PLC, Farmgate Branch, Dhaka" class="p-2 rounded-lg text-emerald-400 hover:bg-emerald-950 transition-colors" title="Copy Bank Name">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-emerald-950/70 border border-emerald-600/60 flex items-center justify-between">
+                  <div>
+                    <span class="text-emerald-300 font-sans block text-[11px] font-bold">Bank Account Number:</span>
+                    <strong class="text-emerald-400 text-base">0102304958102</strong>
+                  </div>
+                  <button data-copy-target="0102304958102" class="p-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-500 transition-colors shadow-md" title="Copy Account Number">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="p-3 rounded-xl bg-[#081510] border border-emerald-900/50">
+                    <span class="text-stone-400 font-sans block text-[10px]">Routing Number:</span>
+                    <strong class="text-white">200261354</strong>
+                  </div>
+                  <div class="p-3 rounded-xl bg-[#081510] border border-emerald-900/50">
+                    <span class="text-stone-400 font-sans block text-[10px]">SWIFT Code:</span>
+                    <strong class="text-white">BSONBDDH</strong>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-[11px] text-stone-400 leading-normal">
+                * For tax deductible receipts, please forward your bank transfer counterfoil or transaction ID to <a href="mailto:setufoundation.bd@gmail.com" class="text-emerald-400 underline font-medium">setufoundation.bd@gmail.com</a>.
+              </p>
+            </div>
+
+            <!-- Channel 2: Mobile Financial Services (MFS) -->
+            <div class="dark-glass-card rounded-3xl border border-emerald-500/25 p-8 shadow-2xl space-y-6 tilt-card">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-950 border border-emerald-600/40 text-emerald-400 flex items-center justify-center font-bold">
+                  <i data-lucide="smartphone" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white">Mobile Financial Services (MFS)</h3>
+                  <p class="text-xs text-stone-400">One Unified Number for bKash, Nagad, and Rocket</p>
+                </div>
+              </div>
+
+              <!-- Primary Unified Number Card for bKash, Nagad & Rocket -->
+              <div class="p-5 rounded-2xl bg-gradient-to-br from-emerald-950/80 via-[#0a1e15] to-[#05110c] border border-emerald-500/40 shadow-xl space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold font-sans bg-pink-950/80 text-pink-300 border border-pink-700/60">bKash</span>
+                    <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold font-sans bg-orange-950/80 text-orange-300 border border-orange-700/60">Nagad</span>
+                    <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold font-sans bg-purple-950/80 text-purple-300 border border-purple-700/60">Rocket</span>
+                  </div>
+                  <span class="text-[10px] text-emerald-400 font-mono font-semibold uppercase tracking-wider">Personal / Merchant</span>
+                </div>
+
+                <div class="flex items-center justify-between gap-3 pt-1">
+                  <div>
+                    <span class="block text-[11px] text-stone-300 font-sans">Official Recipient Number:</span>
+                    <strong class="text-2xl sm:text-3xl text-white font-mono tracking-wider font-extrabold select-all">01739778059</strong>
+                    <span class="block text-[10px] text-emerald-400 font-mono mt-0.5">Format: 01739-778059</span>
+                  </div>
+                  <button data-copy-target="01739778059" class="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-sans text-xs font-bold transition-all shadow-lg flex items-center gap-1.5 shrink-0 cursor-pointer" title="Copy 01739778059">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="space-y-3 text-xs text-stone-300 font-mono">
+                
+                <!-- bKash Box -->
+                <div class="p-3.5 rounded-xl bg-[#170810] border border-pink-900/60 flex items-center justify-between">
+                  <div class="space-y-0.5">
+                    <span class="text-pink-400 font-sans block text-[11px] font-bold">bKash (Send Money / Payment):</span>
+                    <strong class="text-white text-sm">01739778059</strong>
+                    <span class="block text-[10px] text-pink-300 font-sans">Reference: DONATION</span>
+                  </div>
+                  <button data-copy-target="01739778059" class="p-2 rounded-lg bg-pink-700 text-white hover:bg-pink-600 transition-colors shadow-md cursor-pointer" title="Copy bKash Number">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+
+                <!-- Nagad Box -->
+                <div class="p-3.5 rounded-xl bg-[#170a04] border border-orange-900/60 flex items-center justify-between">
+                  <div class="space-y-0.5">
+                    <span class="text-orange-400 font-sans block text-[11px] font-bold">Nagad (Send Money / Payment):</span>
+                    <strong class="text-white text-sm">01739778059</strong>
+                    <span class="block text-[10px] text-orange-300 font-sans">Reference: SETU</span>
+                  </div>
+                  <button data-copy-target="01739778059" class="p-2 rounded-lg bg-orange-700 text-white hover:bg-orange-600 transition-colors shadow-md cursor-pointer" title="Copy Nagad Number">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+
+                <!-- Rocket Box -->
+                <div class="p-3.5 rounded-xl bg-[#120817] border border-purple-900/60 flex items-center justify-between">
+                  <div class="space-y-0.5">
+                    <span class="text-purple-400 font-sans block text-[11px] font-bold">DBBL Rocket (Send Money):</span>
+                    <strong class="text-white text-sm">01739778059</strong>
+                    <span class="block text-[10px] text-purple-300 font-sans">Reference: SETU</span>
+                  </div>
+                  <button data-copy-target="01739778059" class="p-2 rounded-lg bg-purple-700 text-white hover:bg-purple-600 transition-colors shadow-md cursor-pointer" title="Copy Rocket Number">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+
+              </div>
+
+              <div class="p-4 rounded-xl bg-[#081510] border border-emerald-900/40 text-[11px] text-stone-400 space-y-1">
+                <div class="font-bold text-white font-sans">Quick MFS Instructions:</div>
+                <div>1. Select "Send Money" or "Make Payment" in your bKash, Nagad, or Rocket App.</div>
+                <div>2. Input the verified number <strong class="text-white font-mono">01739778059</strong> and your desired contribution.</div>
+                <div>3. Add reference <strong>DONATION</strong> to assist our reconciliation.</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CSR & INSTITUTIONAL PARTNERSHIPS -->
+      <section class="py-24 bg-[#060c09] border-b border-emerald-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="bg-gradient-to-br from-[#0a2016] via-[#06140e] to-[#030a07] rounded-3xl p-8 sm:p-14 text-white border border-emerald-500/30 relative overflow-hidden shadow-2xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <div class="lg:col-span-7 space-y-4">
+                <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Institutional Alliances</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white">
+                  Corporate CSR &amp; INGO Sponsorships
+                </h2>
+                <p class="text-stone-300 text-sm leading-relaxed">
+                  SETU Foundation structures high-impact corporate social responsibility (CSR) programs aligned with Bangladesh national climate targets and SDG 4 (Quality Education) and SDG 13 (Climate Action).
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs text-emerald-300">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                    <span>Formal MoUs &amp; Milestone Reports</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                    <span>E-Waste Hardware Compliance</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                    <span>Third-Party Independent CA Audits</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                    <span>Employee Volunteer Engagement Days</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-5 p-6 rounded-2xl bg-[#07130e]/90 border border-emerald-700/40 backdrop-blur-md space-y-4 shadow-xl">
+                <h4 class="text-sm font-bold text-white">Initiate a Partnership Inquiry</h4>
+                <p class="text-xs text-stone-400">
+                  Connect with General Secretary Md. Jubayer Islam Fahad and the Secretariat to tailor a CSR framework.
+                </p>
+
+                <div class="space-y-2 text-xs font-mono">
+                  <div class="flex items-center gap-2 text-emerald-300">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <a href="mailto:setufoundation.bd@gmail.com" class="hover:underline">setufoundation.bd@gmail.com</a>
+                  </div>
+                  <div class="flex items-center gap-2 text-stone-400">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+                    <span>Farmgate, Tejgaon, Dhaka</span>
+                  </div>
+                </div>
+
+                <a href="contact.html" class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg shadow-emerald-950/60 transition-colors">
+                  <span>Open Institutional Inquiry</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Consistent Institutional Footer -->
+    <footer class="bg-[#030705] text-stone-400 pt-16 pb-12 border-t border-emerald-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-emerald-950">
+          
+          <div class="lg:col-span-2 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-forest-900 text-white flex items-center justify-center font-bold shadow-md shadow-emerald-950">
+                <i data-lucide="sprout" class="w-5 h-5 text-emerald-300"></i>
+              </div>
+              <div>
+                <span class="text-lg font-bold text-white tracking-tight">SETU Foundation</span>
+                <span class="block text-xs font-bengali text-emerald-400">সেতু ফাউন্ডেশন</span>
+              </div>
+            </div>
+            
+            <p class="text-xs text-stone-400 leading-relaxed max-w-sm">
+              SETU Foundation for Environmental &amp; Technological Upliftment is a registered non-profit society dedicated to ecological conservation, digital democratization, and emergency relief across Bangladesh.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-[#06100c] border border-emerald-900/50 text-[11px] text-emerald-300/90 space-y-1 font-mono">
+              <div><strong class="text-white">Legal Entity:</strong> Registered Non-Profit Society</div>
+              <div><strong class="text-white">Statutory Framework:</strong> Act XXI of 1860</div>
+              <div><strong class="text-white">Regulatory:</strong> RJSC Dhaka, Govt. of Bangladesh</div>
+              <div><strong class="text-white">Clearance Letter:</strong> 2026409754 &middot; Sub: 2026423830</div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Institutional</h4>
+            <ul class="space-y-2 text-xs">
+              <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home Portal</a></li>
+              <li><a href="about.html" class="hover:text-emerald-400 transition-colors">Mission &amp; Legal Charter</a></li>
+              <li><a href="governance.html" class="hover:text-emerald-400 transition-colors">Executive Committee</a></li>
+              <li><a href="impact.html" class="hover:text-emerald-400 transition-colors">Impact &amp; Audit Reports</a></li>
+              <li><a href="about.html#legal" class="hover:text-emerald-400 transition-colors">RJSC Compliance Matrix</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Programs</h4>
+            <ul class="space-y-2 text-xs">
+              <li><a href="programs.html#eco" class="hover:text-emerald-400 transition-colors">EcoSETU (Afforestation)</a></li>
+              <li><a href="programs.html#tech" class="hover:text-emerald-400 transition-colors">TechSETU (Coding Bootcamps)</a></li>
+              <li><a href="programs.html#relief" class="hover:text-emerald-400 transition-colors">ReliefSETU (Humanitarian)</a></li>
+              <li><a href="donate.html" class="text-emerald-400 font-bold">Bank &amp; bKash Channels</a></li>
+              <li><a href="contact.html#volunteer" class="hover:text-emerald-400 transition-colors">Volunteer Opportunities</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Secretariat</h4>
+            <div class="text-xs text-stone-400 space-y-2">
+              <p class="flex items-start gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>G-26, RH Home Centre, Farmgate, Tejgaon, Dhaka, Bangladesh</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <a href="mailto:setufoundation.bd@gmail.com" class="hover:text-white transition-colors text-emerald-400">setufoundation.bd@gmail.com</a>
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span>Sun &ndash; Thu: 9:30 AM &ndash; 6:00 PM</span>
+              </p>
+            </div>
+            
+            <!-- Newsletter Subscription -->
+            <div class="pt-2">
+              <form data-ajax-form data-form-type="newsletter" novalidate class="flex flex-col gap-1">
+                <div class="flex items-center gap-1.5">
+                  <input type="email" required placeholder="Your email dispatch" autocomplete="email" maxlength="150" spellcheck="false" class="w-full text-xs px-3 py-2 rounded-lg bg-[#07130e] border border-emerald-900 text-white placeholder-stone-500 focus:outline-none focus:border-emerald-500 transition-colors">
+                  <button type="submit" class="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none text-white text-xs font-bold transition-all shrink-0 flex items-center justify-center min-w-[38px] cursor-pointer" title="Subscribe to newsletter" aria-label="Subscribe to newsletter">
+                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+                <div class="newsletter-feedback hidden text-[11px] leading-tight transition-all duration-200"></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+          <p>&copy; 2026 SETU Foundation for Environmental &amp; Technological Upliftment. All rights reserved.</p>
+          <div class="flex items-center gap-6 text-stone-400">
+            <span>Non-Political &middot; Non-Profit Society</span>
+            <span>Dhaka, Bangladesh</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Shared Javascript -->
+    <script type="module" src="/src/site.js"></script>
+  </body>
+</html>

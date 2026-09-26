@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impact, Gallery &amp; Transparency | SETU Foundation</title>
+    <meta name="description" content="Verifiable milestones, district operations dashboard, field photo gallery, and statutory transparency disclosures of SETU Foundation." />
+    <meta property="og:title" content="Impact, Gallery & Transparency | SETU Foundation" />
+    <meta property="og:description" content="Explore our impact metrics across 6 districts, field photo case studies, and downloadable transparency disclosures." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              forest: {
+                900: '#064e3b',
+                950: '#022c22',
+              },
+              emerald: {
+                400: '#34d399',
+                500: '#10b981',
+                600: '#059669',
+                700: '#047857',
+                800: '#065f46',
+                900: '#064e3b',
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+              bengali: ['"Noto Serif Bengali"', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/src/index.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="bg-[#050b09] text-stone-200 font-sans antialiased selection:bg-emerald-500/30 selection:text-emerald-200 flex flex-col min-h-screen overflow-x-hidden">
+    
+    <!-- Top Bar Navigation (Dark Glassmorphic) -->
+    <header class="sticky top-0 z-40 bg-[#050b09]/80 backdrop-blur-xl border-b border-emerald-900/30 transition-all duration-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-600 to-forest-900 text-white flex items-center justify-center font-bold shadow-lg shadow-emerald-950/30 border border-emerald-500/30 group-hover:scale-105 transition-transform">
+              <i data-lucide="sprout" class="w-6 h-6 text-emerald-300"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xl font-extrabold tracking-tight text-white">SETU Foundation</span>
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-400 font-semibold border border-emerald-800/60 font-bengali">সেতু</span>
+              </div>
+              <p class="text-[11px] font-medium tracking-tight text-emerald-300/60 uppercase hidden sm:block">Environmental &amp; Technological Upliftment</p>
+            </div>
+          </a>
+
+          <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-300">
+            <a href="index.html" class="hover:text-emerald-300 transition-colors pb-1">Home</a>
+            <a href="about.html" class="hover:text-emerald-300 transition-colors pb-1">About Us</a>
+            <a href="programs.html" class="hover:text-emerald-300 transition-colors pb-1">Programs</a>
+            <a href="governance.html" class="hover:text-emerald-300 transition-colors pb-1">Governance</a>
+            <a href="impact.html" class="text-emerald-400 font-bold border-b-2 border-emerald-500 pb-1">Impact &amp; Reports</a>
+            <a href="contact.html" class="hover:text-emerald-300 transition-colors pb-1">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <a href="donate.html" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 rounded-xl transition-all shadow-lg shadow-emerald-950/50 hover:shadow-emerald-900/70 border border-emerald-400/30 hover:-translate-y-0.5 whitespace-nowrap">
+              <i data-lucide="heart" class="w-3.5 h-3.5 text-white"></i>
+              <span>Support the Mission</span>
+            </a>
+
+            <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 rounded-xl text-stone-300 hover:bg-emerald-950/60 hover:text-white border border-emerald-900/40 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" aria-label="Open Navigation Menu">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Backdrop -->
+    <div id="drawer-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="mobile-drawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-[#070e0b] border-l border-emerald-900/40 z-50 transform translate-x-full transition-transform duration-300 ease-out shadow-2xl flex flex-col">
+      <div class="p-6 border-b border-emerald-900/40 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold">
+            <i data-lucide="sprout" class="w-4 h-4"></i>
+          </div>
+          <span class="font-bold text-white">SETU Foundation</span>
+        </div>
+        <button id="close-menu-btn" class="p-2 rounded-lg text-stone-400 hover:text-white hover:bg-emerald-950" aria-label="Close Navigation">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="py-4 px-6 flex-1 overflow-y-auto space-y-1">
+        <a href="index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="home" class="w-4 h-4"></i> Home
+        </a>
+        <a href="about.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="info" class="w-4 h-4"></i> About Us &amp; Legal Charter
+        </a>
+        <a href="programs.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="layers" class="w-4 h-4"></i> Programs &amp; Initiatives
+        </a>
+        <a href="governance.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="shield-check" class="w-4 h-4"></i> Executive Committee
+        </a>
+        <a href="impact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-emerald-400 font-bold bg-emerald-950/50 border border-emerald-900/50 text-sm">
+          <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Impact &amp; Disclosures
+        </a>
+        <a href="donate.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="heart-handshake" class="w-4 h-4"></i> Donate &amp; Bank Details
+        </a>
+        <a href="contact.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-stone-300 hover:text-white hover:bg-emerald-950/40 text-sm font-medium">
+          <i data-lucide="mail" class="w-4 h-4"></i> Contact &amp; Volunteer
+        </a>
+      </div>
+
+      <div class="p-6 border-t border-emerald-900/40 bg-[#040806] space-y-3">
+        <a href="donate.html" class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-950/60">
+          <i data-lucide="heart" class="w-4 h-4 text-emerald-200"></i> Donate Directly
+        </a>
+        <p class="text-[11px] text-stone-500 text-center">Registered Non-Profit under Act XXI of 1860<br>Dhaka, Bangladesh</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      
+      <!-- HERO BANNER WITH AMBIENT PARTICLES -->
+      <section class="bg-[#06100c] text-white py-16 lg:py-24 relative overflow-hidden border-b border-emerald-900/30">
+        <canvas class="ambient-canvas absolute inset-0 w-full h-full pointer-events-auto z-0 opacity-70"></canvas>
+        <div class="absolute top-1/2 left-1/4 w-80 h-80 bg-teal-500/10 blur-[120px] rounded-full pointer-events-none animate-pulse-glow"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="max-w-3xl">
+            <span class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-emerald-400 mb-3 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 shadow-sm">
+              <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+              <span>Measurable Progress &middot; Open Ledgers</span>
+            </span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+              Impact Milestones &amp; Transparency Reports
+            </h1>
+            <p class="mt-4 text-stone-300 text-base sm:text-lg leading-relaxed">
+              We hold ourselves to absolute statutory transparency. Explore our district deployment dashboard, photo documentation archive, and certified financial audits.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DISTRICT IMPACT DASHBOARD (DARK GLASS WIDGETS) -->
+      <section id="impact" class="py-20 bg-[#050b09] border-b border-emerald-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <!-- Verifiable Summary Counters -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <!-- Metric 1 -->
+            <div class="p-6 rounded-2xl dark-glass-card glow-border tilt-card transition-all group">
+              <div class="w-12 h-12 rounded-xl bg-emerald-950/80 border border-emerald-700/40 text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="trees" class="w-6 h-6"></i>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight counter-value" data-target="42500" data-suffix="+">
+                0
+              </div>
+              <h3 class="text-sm font-bold text-stone-100 mt-2">Mangrove &amp; Native Trees</h3>
+              <p class="text-xs text-stone-400 mt-1">Plantings along saline coastal channels and urban micro-forests in Dhaka.</p>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="p-6 rounded-2xl dark-glass-card glow-border tilt-card transition-all group">
+              <div class="w-12 h-12 rounded-xl bg-blue-950/80 border border-blue-700/40 text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="code-2" class="w-6 h-6"></i>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight counter-value" data-target="1850" data-suffix="+">
+                0
+              </div>
+              <h3 class="text-sm font-bold text-stone-100 mt-2">Youth Tech Graduates</h3>
+              <p class="text-xs text-stone-400 mt-1">Trained in computer literacy, Python, web technologies, and practical AI tools.</p>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="p-6 rounded-2xl dark-glass-card glow-border tilt-card transition-all group">
+              <div class="w-12 h-12 rounded-xl bg-amber-950/80 border border-amber-700/40 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="life-buoy" class="w-6 h-6"></i>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight counter-value" data-target="14200" data-suffix="+">
+                0
+              </div>
+              <h3 class="text-sm font-bold text-stone-100 mt-2">Emergency Relief Kits</h3>
+              <p class="text-xs text-stone-400 mt-1">Distributed during severe seasonal floods in Sylhet, Sunamganj, and Feni.</p>
+            </div>
+
+            <!-- Metric 4 -->
+            <div class="p-6 rounded-2xl dark-glass-card glow-border tilt-card transition-all group">
+              <div class="w-12 h-12 rounded-xl bg-purple-950/80 border border-purple-700/40 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <i data-lucide="map" class="w-6 h-6"></i>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight counter-value" data-target="6" data-suffix=" Districts">
+                0
+              </div>
+              <h3 class="text-sm font-bold text-stone-100 mt-2">Active Field Presence</h3>
+              <p class="text-xs text-stone-400 mt-1">Active volunteer chapters in Dhaka, Khulna, Sylhet, Feni, Barisal, and Rangpur.</p>
+            </div>
+          </div>
+
+          <div class="max-w-2xl mb-14">
+            <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Operations Map</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">District Distribution Dashboard</h2>
+            <p class="text-stone-400 text-sm mt-1">Real-time footprint across Bangladesh's climate frontlines and education hubs.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- District 1: Dhaka Metropolitan -->
+            <div class="p-6 rounded-3xl dark-glass-card border border-emerald-900/50 hover:border-emerald-500/40 glow-border tilt-card transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-mono uppercase tracking-widest text-stone-400">Division: Dhaka</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-700/60 text-xs font-bold">Secretariat &amp; Hub</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">Dhaka Metropolitan</h3>
+                <p class="text-xs text-stone-300 mt-2">
+                  Urban heat island mitigation, 8 school nursery projects, Code for Tomorrow primary bootcamps, and E-Waste hardware refurbishment lab.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-emerald-900/40 grid grid-cols-2 gap-2 text-xs font-mono text-stone-300">
+                <div><span class="text-stone-400 block font-sans">Students:</span><strong class="text-white">1,200+ trained</strong></div>
+                <div><span class="text-stone-400 block font-sans">Urban Trees:</span><strong class="text-emerald-400">8,500 planted</strong></div>
+              </div>
+            </div>
+
+            <!-- District 2: Khulna (Coastal Belts) -->
+            <div class="p-6 rounded-3xl dark-glass-card border border-emerald-900/50 hover:border-emerald-500/40 glow-border tilt-card transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-mono uppercase tracking-widest text-stone-400">Division: Khulna</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-teal-950 text-teal-300 border border-teal-700/60 text-xs font-bold">Coastal Belts</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">Khulna &amp; Dacope Upazila</h3>
+                <p class="text-xs text-stone-300 mt-2">
+                  Saline-resistant mangrove bio-shields along river embankments, coastal village adaptation workshops, and rainwater storage tanks.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-emerald-900/40 grid grid-cols-2 gap-2 text-xs font-mono text-stone-300">
+                <div><span class="text-stone-400 block font-sans">Mangroves:</span><strong class="text-emerald-400">24,000 saplings</strong></div>
+                <div><span class="text-stone-400 block font-sans">Farmers:</span><strong class="text-white">1,800 mentored</strong></div>
+              </div>
+            </div>
+
+            <!-- District 3: Sylhet (Haor Basin) -->
+            <div class="p-6 rounded-3xl dark-glass-card border border-emerald-900/50 hover:border-amber-500/40 glow-border tilt-card transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-mono uppercase tracking-widest text-stone-400">Division: Sylhet</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-amber-950 text-amber-300 border border-amber-700/60 text-xs font-bold">Haor Wetland</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">Sylhet &amp; Sunamganj</h3>
+                <p class="text-xs text-stone-300 mt-2">
+                  Rapid flood boat rescue logistics, ceramic water filtration distribution, and solar-powered off-grid digital classrooms.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-emerald-900/40 grid grid-cols-2 gap-2 text-xs font-mono text-stone-300">
+                <div><span class="text-stone-400 block font-sans">Relief Kits:</span><strong class="text-amber-400">8,400 delivered</strong></div>
+                <div><span class="text-stone-400 block font-sans">Solar Pods:</span><strong class="text-white">8 installed</strong></div>
+              </div>
+            </div>
+
+            <!-- District 4: Feni (Flash Flood Zone) -->
+            <div class="p-6 rounded-3xl dark-glass-card border border-emerald-900/50 hover:border-amber-500/40 glow-border tilt-card transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-mono uppercase tracking-widest text-stone-400">Division: Chittagong</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-amber-950 text-amber-300 border border-amber-700/60 text-xs font-bold">Flood Lifeline</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">Feni &amp; Parshuram</h3>
+                <p class="text-xs text-stone-300 mt-2">
+                  Emergency medical and water purification response during catastrophic flash flooding, community dry food distribution center.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-emerald-900/40 grid grid-cols-2 gap-2 text-xs font-mono text-stone-300">
+                <div><span class="text-stone-400 block font-sans">Relief Kits:</span><strong class="text-amber-400">4,200 delivered</strong></div>
+                <div><span class="text-stone-400 block font-sans">Water Supply:</span><strong class="text-white">60,000 Liters</strong></div>
+              </div>
+            </div>
+
+            <!-- District 5: Barisal (Delta Riverine) -->
+            <div class="p-6 rounded-3xl dark-glass-card border border-emerald-900/50 hover:border-emerald-500/40 glow-border tilt-card transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-mono uppercase tracking-widest text-stone-400">Division: Barisal</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-700/60 text-xs font-bold">Riverine Delta</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">Barisal &amp; Bhola</h3>
+                <p class="text-xs text-stone-300 mt-2">
+                  Erosion-defense bamboo and vetiver grass planting, tidal riverbank afforestation, youth climate volunteer chapter.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-emerald-900/40 grid grid-cols-2 gap-2 text-xs font-mono text-stone-300">
+                <div><span class="text-stone-400 block font-sans">Bank Plantings:</span><strong class="text-emerald-400">10,000 saplings</strong></div>
+                <div><span class="text-stone-400 block font-sans">Volunteers:</span><strong class="text-white">140 active</strong></div>
+              </div>
+            </div>
+
+            <!-- District 6: Rangpur (Northern Cold Wave) -->
+            <div class="p-6 rounded-3xl dark-glass-card border border-emerald-900/50 hover:border-purple-500/40 glow-border tilt-card transition-all flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="text-xs font-mono uppercase tracking-widest text-stone-400">Division: Rangpur</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-purple-950 text-purple-300 border border-purple-700/60 text-xs font-bold">Northern Belt</span>
+                </div>
+                <h3 class="text-xl font-bold text-white">Rangpur &amp; Kurigram</h3>
+                <p class="text-xs text-stone-300 mt-2">
+                  Severe winter clothing distribution, rural school computer lab donations, community agro-forestry initiatives.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-emerald-900/40 grid grid-cols-2 gap-2 text-xs font-mono text-stone-300">
+                <div><span class="text-stone-400 block font-sans">Winter Clothes:</span><strong class="text-purple-400">3,600 blankets</strong></div>
+                <div><span class="text-stone-400 block font-sans">School Labs:</span><strong class="text-white">4 equipped</strong></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PHOTO & CASE STUDY GALLERY (WITH INTERACTIVE MODAL) -->
+      <section class="py-24 bg-[#040806] border-b border-emerald-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+            <div>
+              <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Visual Evidence</span>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Field Photo &amp; Case Study Gallery</h2>
+              <p class="text-stone-400 text-sm mt-1">Click on any record to inspect detailed project logs, dates, and photographic archives.</p>
+            </div>
+            <span class="text-xs text-emerald-400 font-mono mt-3 md:mt-0">Click item to open inspection modal</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Gallery Item 1 -->
+            <div data-gallery-item
+                 data-title="Mangrove Bio-Shield Planting &middot; Khulna Embankment"
+                 data-meta="EcoSETU &middot; Dacope Upazila, Khulna &middot; June 2026"
+                 data-desc="Over 120 community youth volunteers collaborated with local fishermen to anchor 4,500 salinity-resistant Sundari and Keora saplings along an eroded tidal mudflat. The plantation forms a critical living buffer ahead of the cyclone season."
+                 class="group relative rounded-3xl overflow-hidden dark-glass-card border border-emerald-900/50 hover:border-emerald-500/40 shadow-xl transition-all cursor-pointer tilt-card">
+              <div class="h-64 bg-gradient-to-tr from-[#061811] via-[#0b291d] to-[#04120c] p-6 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                <div class="relative z-10 flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 text-[11px] font-mono border border-emerald-700/60">
+                    EcoSETU Field 01
+                  </span>
+                  <div class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-emerald-300 group-hover:scale-110 transition-transform">
+                    <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                  </div>
+                </div>
+                
+                <div class="relative z-10">
+                  <span class="text-xs font-mono text-emerald-400">Khulna Delta Belts</span>
+                  <h4 class="text-base font-bold text-white mt-1 leading-snug">Coastal Mangrove Bio-Shield Drive</h4>
+                  <p class="text-xs text-stone-300 line-clamp-2 mt-1">4,500 mangrove saplings planted along critical riverbanks.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div data-gallery-item
+                 data-title="Code for Tomorrow Bootcamp Cohort &middot; Dhaka Lab"
+                 data-meta="TechSETU &middot; Farmgate Technology Lab, Dhaka &middot; August 2026"
+                 data-desc="Graduation ceremony for our 12-week intensive Python and Web development cohort. 38 students from underprivileged backgrounds presented live projects, including an SMS flood alerting prototype and automated farm ledger apps."
+                 class="group relative rounded-3xl overflow-hidden dark-glass-card border border-indigo-900/50 hover:border-blue-500/40 shadow-xl transition-all cursor-pointer tilt-card">
+              <div class="h-64 bg-gradient-to-tr from-[#080d18] via-[#0d1629] to-[#050810] p-6 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                <div class="relative z-10 flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-full bg-indigo-950 text-indigo-300 text-[11px] font-mono border border-indigo-700/60">
+                    TechSETU Lab 02
+                  </span>
+                  <div class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-indigo-300 group-hover:scale-110 transition-transform">
+                    <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                  </div>
+                </div>
+                
+                <div class="relative z-10">
+                  <span class="text-xs font-mono text-indigo-400">Dhaka Technology Center</span>
+                  <h4 class="text-base font-bold text-white mt-1 leading-snug">Youth Coding Bootcamp Cohort</h4>
+                  <p class="text-xs text-stone-300 line-clamp-2 mt-1">38 students graduating with competitive software fundamentals.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div data-gallery-item
+                 data-title="Monsoon Water Purification &middot; Sunamganj Haor"
+                 data-meta="ReliefSETU &middot; Tahirpur, Sunamganj &middot; July 2026"
+                 data-desc="During unprecedented flash inundations in the northeastern haor basin, SETU volunteers navigated shallow draft engine boats to bring 250 heavy-duty ceramic water filter systems and 2,000 nutrition rations to marooned homesteads."
+                 class="group relative rounded-3xl overflow-hidden dark-glass-card border border-amber-900/50 hover:border-amber-500/40 shadow-xl transition-all cursor-pointer tilt-card">
+              <div class="h-64 bg-gradient-to-tr from-[#140b03] via-[#241306] to-[#0d0702] p-6 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                <div class="relative z-10 flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-full bg-amber-950 text-amber-300 text-[11px] font-mono border border-amber-700/60">
+                    ReliefSETU Mission 03
+                  </span>
+                  <div class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-amber-300 group-hover:scale-110 transition-transform">
+                    <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                  </div>
+                </div>
+                
+                <div class="relative z-10">
+                  <span class="text-xs font-mono text-amber-400">Sunamganj Wetland</span>
+                  <h4 class="text-base font-bold text-white mt-1 leading-snug">Flash Flood Lifeline Dispatch</h4>
+                  <p class="text-xs text-stone-300 line-clamp-2 mt-1">Potable water purification units and food parcels for marooned families.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div data-gallery-item
+                 data-title="Corporate Laptop Refurbishment &middot; Tejgaon Center"
+                 data-meta="TechSETU &middot; Tejgaon, Dhaka &middot; May 2026"
+                 data-desc="SETU volunteer engineers serviced 60 donated laptops from multinational tech corporations: upgrading RAM, replacing batteries, installing lightweight Linux OS with Python, Scratch, and offline Wikipedia for rural classrooms."
+                 class="group relative rounded-3xl overflow-hidden dark-glass-card border border-cyan-900/50 hover:border-cyan-500/40 shadow-xl transition-all cursor-pointer tilt-card">
+              <div class="h-64 bg-gradient-to-tr from-[#051114] via-[#092229] to-[#030a0d] p-6 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                <div class="relative z-10 flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-full bg-cyan-950 text-cyan-300 text-[11px] font-mono border border-cyan-700/60">
+                    TechSETU Hardware
+                  </span>
+                  <div class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-cyan-300 group-hover:scale-110 transition-transform">
+                    <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                  </div>
+                </div>
+                
+                <div class="relative z-10">
+                  <span class="text-xs font-mono text-cyan-400">Tejgaon Logistics Center</span>
+                  <h4 class="text-base font-bold text-white mt-1 leading-snug">E-Waste Hardware Refurbishment</h4>
+                  <p class="text-xs text-stone-300 line-clamp-2 mt-1">60 enterprise laptops upgraded and repurposed for village high schools.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div data-gallery-item
+                 data-title="Urban Rooftop Micro-Forest &middot; Tejgaon School"
+                 data-meta="EcoSETU &middot; Farmgate, Dhaka &middot; September 2026"
+                 data-desc="Transformation of a bare concrete rooftop into a 400-plant productive biological laboratory with native medicinal shrubs, fruit saplings, and rainwater catchment barrels monitored by high school environmental science students."
+                 class="group relative rounded-3xl overflow-hidden dark-glass-card border border-emerald-900/50 hover:border-emerald-500/40 shadow-xl transition-all cursor-pointer tilt-card">
+              <div class="h-64 bg-gradient-to-tr from-[#05160e] via-[#0c2e1f] to-[#040e09] p-6 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                <div class="relative z-10 flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 text-[11px] font-mono border border-emerald-700/60">
+                    EcoSETU Urban
+                  </span>
+                  <div class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-emerald-300 group-hover:scale-110 transition-transform">
+                    <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                  </div>
+                </div>
+                
+                <div class="relative z-10">
+                  <span class="text-xs font-mono text-emerald-400">Dhaka Urban Core</span>
+                  <h4 class="text-base font-bold text-white mt-1 leading-snug">School Rooftop Micro-Forest</h4>
+                  <p class="text-xs text-stone-300 line-clamp-2 mt-1">Living ecological lab and heat mitigation canopy on school rooftops.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div data-gallery-item
+                 data-title="Winter Warmth &amp; Health Camp &middot; Kurigram"
+                 data-meta="ReliefSETU &middot; Kurigram Northern Belt &middot; January 2026"
+                 data-desc="Distribution of heavy wool blankets, warm jackets, and respiratory health clinics for 1,200 elderly and children living along exposed river sandbars (chars) enduring severe sub-10°C northern cold waves."
+                 class="group relative rounded-3xl overflow-hidden dark-glass-card border border-purple-900/50 hover:border-purple-500/40 shadow-xl transition-all cursor-pointer tilt-card">
+              <div class="h-64 bg-gradient-to-tr from-[#120817] via-[#220d2b] to-[#0a040d] p-6 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                <div class="relative z-10 flex items-center justify-between">
+                  <span class="px-2.5 py-1 rounded-full bg-purple-950 text-purple-300 text-[11px] font-mono border border-purple-700/60">
+                    ReliefSETU Northern
+                  </span>
+                  <div class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-purple-300 group-hover:scale-110 transition-transform">
+                    <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                  </div>
+                </div>
+                
+                <div class="relative z-10">
+                  <span class="text-xs font-mono text-purple-400">Kurigram Char Belts</span>
+                  <h4 class="text-base font-bold text-white mt-1 leading-snug">Northern Winter Warmth Mission</h4>
+                  <p class="text-xs text-stone-300 line-clamp-2 mt-1">Thermal clothing packages and mobile clinics for riverine char residents.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TRANSPARENCY & STATUTORY DISCLOSURES -->
+      <section class="py-24 bg-[#060c09] border-b border-emerald-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="max-w-3xl mb-14">
+            <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">Financial Integrity</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Transparency &amp; Disclosures</h2>
+            <p class="text-stone-400 text-sm mt-1">
+              In accordance with RJSC requirements under Act XXI of 1860, our institutional charter, annual financial audits, and AGM minutes are public records.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Document 1: MoA & Constitution -->
+            <div class="p-8 rounded-3xl dark-glass-card border border-emerald-900/50 flex flex-col justify-between space-y-4 glow-border transition-all">
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-600/40 text-emerald-400 flex items-center justify-center font-bold mb-3">
+                  <i data-lucide="file-text" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-bold text-white">Memorandum of Association &amp; Constitution</h3>
+                <p class="text-xs text-stone-400 mt-1 leading-relaxed">
+                  The foundational charter registered with RJSC Dhaka outlining institutional aims, quorum bylaws, and non-profit statutes.
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-emerald-900/40 flex items-center justify-between">
+                <span class="text-[11px] font-mono text-stone-500">PDF &middot; 2.4 MB</span>
+                <button onclick="showToast('Initiating download: SETU_Foundation_MoA_and_Constitution_RJSC.pdf')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors">
+                  <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                  <span>Download</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Document 2: Annual Audit Report -->
+            <div class="p-8 rounded-3xl dark-glass-card border border-emerald-900/50 flex flex-col justify-between space-y-4 glow-border transition-all">
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-600/40 text-emerald-400 flex items-center justify-center font-bold mb-3">
+                  <i data-lucide="file-check-2" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-bold text-white">Statutory Financial Audit 2026</h3>
+                <p class="text-xs text-stone-400 mt-1 leading-relaxed">
+                  Independent audit report conducted by certified Chartered Accountants certifying income, donation inflows, and project expenses.
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-emerald-900/40 flex items-center justify-between">
+                <span class="text-[11px] font-mono text-stone-500">PDF &middot; 1.8 MB</span>
+                <button onclick="showToast('Initiating download: SETU_Foundation_Statutory_Audit_Report_2026.pdf')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors">
+                  <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                  <span>Download</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Document 3: Minutes of Annual General Meeting -->
+            <div class="p-8 rounded-3xl dark-glass-card border border-emerald-900/50 flex flex-col justify-between space-y-4 glow-border transition-all">
+              <div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-600/40 text-emerald-400 flex items-center justify-center font-bold mb-3">
+                  <i data-lucide="scroll" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-bold text-white">Minutes of Annual General Meeting (AGM)</h3>
+                <p class="text-xs text-stone-400 mt-1 leading-relaxed">
+                  Formal proceedings of the General Assembly ratifying the Executive Committee roster, project budgets, and annual resolutions.
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-emerald-900/40 flex items-center justify-between">
+                <span class="text-[11px] font-mono text-stone-500">PDF &middot; 1.1 MB</span>
+                <button onclick="showToast('Initiating download: SETU_AGM_Proceedings_and_Resolutions.pdf')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors">
+                  <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                  <span>Download</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Interactive Gallery Modal (Dark Theme) -->
+    <div id="gallery-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-0 hidden transition-opacity duration-300">
+      <div id="modal-backdrop" class="fixed inset-0 bg-black/90 backdrop-blur-xl"></div>
+      
+      <div class="relative bg-[#091510] rounded-3xl max-w-2xl w-full shadow-2xl overflow-hidden z-10 border border-emerald-500/30 transform transition-transform">
+        <div class="h-2 bg-gradient-to-r from-emerald-500 to-teal-400 w-full"></div>
+        <div class="p-6 sm:p-8 space-y-4">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <span id="modal-meta" class="text-xs font-mono text-emerald-400 uppercase tracking-wider block"></span>
+              <h3 id="modal-title" class="text-xl sm:text-2xl font-extrabold text-white mt-1"></h3>
+            </div>
+            <button id="modal-close-btn" class="p-2 rounded-xl text-stone-400 hover:text-white hover:bg-emerald-950 transition-colors" aria-label="Close dialog">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#040c08] border border-emerald-900/40">
+            <p id="modal-desc" class="text-sm text-stone-300 leading-relaxed"></p>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-stone-500 pt-2 font-mono">
+            <span>Verified SETU Field Dispatch Log</span>
+            <span>Accredited RJSC Registry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consistent Institutional Footer -->
+    <footer class="bg-[#030705] text-stone-400 pt-16 pb-12 border-t border-emerald-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-emerald-950">
+          
+          <div class="lg:col-span-2 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-forest-900 text-white flex items-center justify-center font-bold shadow-md shadow-emerald-950">
+                <i data-lucide="sprout" class="w-5 h-5 text-emerald-300"></i>
+              </div>
+              <div>
+                <span class="text-lg font-bold text-white tracking-tight">SETU Foundation</span>
+                <span class="block text-xs font-bengali text-emerald-400">সেতু ফাউন্ডেশন</span>
+              </div>
+            </div>
+            
+            <p class="text-xs text-stone-400 leading-relaxed max-w-sm">
+              SETU Foundation for Environmental &amp; Technological Upliftment is a registered non-profit society dedicated to ecological conservation, digital democratization, and emergency relief across Bangladesh.
+            </p>
+
+            <div class="p-3.5 rounded-xl bg-[#06100c] border border-emerald-900/50 text-[11px] text-emerald-300/90 space-y-1 font-mono">
+              <div><strong class="text-white">Legal Entity:</strong> Registered Non-Profit Society</div>
+              <div><strong class="text-white">Statutory Framework:</strong> Act XXI of 1860</div>
+              <div><strong class="text-white">Regulatory:</strong> RJSC Dhaka, Govt. of Bangladesh</div>
+              <div><strong class="text-white">Clearance Letter:</strong> 2026409754 &middot; Sub: 2026423830</div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Institutional</h4>
+            <ul class="space-y-2 text-xs">
+              <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home Portal</a></li>
+              <li><a href="about.html" class="hover:text-emerald-400 transition-colors">Mission &amp; Legal Charter</a></li>
+              <li><a href="governance.html" class="hover:text-emerald-400 transition-colors">Executive Committee</a></li>
+              <li><a href="impact.html" class="text-emerald-400 font-bold">Impact &amp; Audit Reports</a></li>
+              <li><a href="about.html#legal" class="hover:text-emerald-400 transition-colors">RJSC Compliance Matrix</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Programs</h4>
+            <ul class="space-y-2 text-xs">
+              <li><a href="programs.html#eco" class="hover:text-emerald-400 transition-colors">EcoSETU (Afforestation)</a></li>
+              <li><a href="programs.html#tech" class="hover:text-emerald-400 transition-colors">TechSETU (Coding Bootcamps)</a></li>
+              <li><a href="programs.html#relief" class="hover:text-emerald-400 transition-colors">ReliefSETU (Humanitarian)</a></li>
+              <li><a href="donate.html" class="hover:text-emerald-400 transition-colors">Bank &amp; bKash Channels</a></li>
+              <li><a href="contact.html#volunteer" class="hover:text-emerald-400 transition-colors">Volunteer Opportunities</a></li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-white">Secretariat</h4>
+            <div class="text-xs text-stone-400 space-y-2">
+              <p class="flex items-start gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>G-26, RH Home Centre, Farmgate, Tejgaon, Dhaka, Bangladesh</span>
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <a href="mailto:setufoundation.bd@gmail.com" class="hover:text-white transition-colors text-emerald-400">setufoundation.bd@gmail.com</a>
+              </p>
+              <p class="flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span>Sun &ndash; Thu: 9:30 AM &ndash; 6:00 PM</span>
+              </p>
+            </div>
+            
+            <!-- Newsletter Subscription -->
+            <div class="pt-2">
+              <form data-ajax-form data-form-type="newsletter" novalidate class="flex flex-col gap-1">
+                <div class="flex items-center gap-1.5">
+                  <input type="email" required placeholder="Your email dispatch" autocomplete="email" maxlength="150" spellcheck="false" class="w-full text-xs px-3 py-2 rounded-lg bg-[#07130e] border border-emerald-900 text-white placeholder-stone-500 focus:outline-none focus:border-emerald-500 transition-colors">
+                  <button type="submit" class="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-800 disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none text-white text-xs font-bold transition-all shrink-0 flex items-center justify-center min-w-[38px] cursor-pointer" title="Subscribe to newsletter" aria-label="Subscribe to newsletter">
+                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+                <div class="newsletter-feedback hidden text-[11px] leading-tight transition-all duration-200"></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+          <p>&copy; 2026 SETU Foundation for Environmental &amp; Technological Upliftment. All rights reserved.</p>
+          <div class="flex items-center gap-6 text-stone-400">
+            <span>Non-Political &middot; Non-Profit Society</span>
+            <span>Dhaka, Bangladesh</span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Shared Javascript -->
+    <script type="module" src="/src/site.js"></script>
+  </body>
+</html>

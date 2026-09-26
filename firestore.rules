@@ -1,0 +1,103 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Default Deny Catch-All
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Hardened Global Helpers
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // User Profile Validation
+    function isValidUser(data) {
+      return data.keys().hasAll(['userId', 'email', 'displayName']) &&
+        data.userId is string &&
+        data.userId == request.auth.uid &&
+        data.email is string &&
+        data.email.size() <= 150 &&
+        data.displayName is string &&
+        data.displayName.size() <= 100;
+    }
+
+    // Pledge Validation
+    function isValidPledge(data) {
+      return data.keys().hasAll(['pledgeId', 'userId', 'amount', 'program', 'status']) &&
+        data.pledgeId is string &&
+        data.pledgeId.size() <= 128 &&
+        data.userId is string &&
+        data.userId == request.auth.uid &&
+        data.amount is number &&
+        data.amount > 0 &&
+        data.program is string &&
+        data.program.size() <= 100 &&
+        data.status is string &&
+        data.status.size() <= 50;
+    }
+
+    // Inquiry & Volunteer Validation
+    function isValidInquiry(data) {
+      return data.keys().hasAll(['inquiryId', 'name', 'email', 'inquiryType', 'message']) &&
+        data.inquiryId is string &&
+        data.inquiryId.size() <= 128 &&
+        data.name is string &&
+        data.name.size() <= 100 &&
+        data.email is string &&
+        data.email.size() <= 150 &&
+        data.inquiryType is string &&
+        data.inquiryType.size() <= 50 &&
+        data.message is string &&
+        data.message.size() <= 2000;
+    }
+
+    // Newsletter Subscription Validation
+    function isValidNewsletterSubscription(data) {
+      return data.keys().hasAll(['subscriptionId', 'email', 'status']) &&
+        data.subscriptionId is string &&
+        data.subscriptionId.size() <= 128 &&
+        data.email is string &&
+        data.email.size() <= 150 &&
+        data.status is string &&
+        data.status.size() <= 50;
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUser(request.resource.data);
+      allow update: if isOwner(userId) && isValidId(userId) && isValidUser(request.resource.data) &&
+        request.resource.data.userId == resource.data.userId;
+    }
+
+    // Pledges Collection
+    match /pledges/{pledgeId} {
+      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow get: if isSignedIn() && resource.data.userId == request.auth.uid && isValidId(pledgeId);
+      allow create: if isSignedIn() && isValidId(pledgeId) && isValidPledge(request.resource.data);
+    }
+
+    // Inquiries Collection
+    match /inquiries/{inquiryId} {
+      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow get: if isSignedIn() && resource.data.userId == request.auth.uid && isValidId(inquiryId);
+      allow create: if isValidId(inquiryId) && isValidInquiry(request.resource.data);
+    }
+
+    // Newsletter Subscriptions Collection
+    match /newsletter_subscriptions/{subscriptionId} {
+      allow get: if isValidId(subscriptionId);
+      allow create: if isValidId(subscriptionId) && isValidNewsletterSubscription(request.resource.data);
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Registered user profile for SETU Foundation volunteers and supporters",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User email address"
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Full name of the user"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "Avatar photo URL"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["supporter", "volunteer", "donor", "member", "admin"],
+          "description": "Role within the foundation community"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Last update timestamp"
+        }
+      },
+      "required": ["userId", "email", "displayName"]
+    },
+    "Pledge": {
+      "title": "Pledge",
+      "description": "Donation pledge or sponsorship contribution record",
+      "type": "object",
+      "properties": {
+        "pledgeId": {
+          "type": "string",
+          "description": "Unique identifier for the pledge"
+        },
+        "userId": {
+          "type": "string",
+          "description": "UID of pledging supporter"
+        },
+        "userEmail": {
+          "type": "string",
+          "format": "email",
+          "description": "Email of pledging supporter"
+        },
+        "amount": {
+          "type": "number",
+          "description": "Pledge amount in BDT"
+        },
+        "program": {
+          "type": "string",
+          "description": "Target program (e.g. EcoSETU, TechSETU, ReliefSETU)"
+        },
+        "tierName": {
+          "type": "string",
+          "description": "Selected tier name"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "enum": ["bank", "bkash", "nagad", "custom"],
+          "description": "Intended payment channel"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["submitted", "verified", "completed"],
+          "description": "Status of the pledge"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Submission timestamp"
+        }
+      },
+      "required": ["pledgeId", "userId", "amount", "program", "status"]
+    },
+    "Inquiry": {
+      "title": "Inquiry",
+      "description": "Contact message or volunteer registration submission",
+      "type": "object",
+      "properties": {
+        "inquiryId": {
+          "type": "string",
+          "description": "Unique inquiry ID"
+        },
+        "userId": {
+          "type": "string",
+          "description": "UID of submitting user or guest"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Full contact name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Contact email"
+        },
+        "inquiryType": {
+          "type": "string",
+          "enum": ["general", "volunteer", "partnership"],
+          "description": "Type of inquiry"
+        },
+        "message": {
+          "type": "string",
+          "maxLength": 2000,
+          "description": "Message content"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["new", "reviewed", "resolved"],
+          "description": "Status of message review"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Submission timestamp"
+        }
+      },
+      "required": ["inquiryId", "name", "email", "inquiryType", "message"]
+    },
+    "NewsletterSubscription": {
+      "title": "NewsletterSubscription",
+      "description": "Subscriber record for SETU Foundation updates and field dispatches",
+      "type": "object",
+      "properties": {
+        "subscriptionId": {
+          "type": "string",
+          "description": "Unique subscription ID"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Subscriber email address"
+        },
+        "source": {
+          "type": "string",
+          "description": "Source location of subscription, e.g. footer"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "unsubscribed"],
+          "description": "Subscription status"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Subscription timestamp"
+        }
+      },
+      "required": ["subscriptionId", "email", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Registered user profiles and community accounts"
+    },
+    "/pledges/{pledgeId}": {
+      "schema": "Pledge",
+      "description": "Community donation pledges and support commitments"
+    },
+    "/inquiries/{inquiryId}": {
+      "schema": "Inquiry",
+      "description": "General inquiries and volunteer applications"
+    },
+    "/newsletter_subscriptions/{subscriptionId}": {
+      "schema": "NewsletterSubscription",
+      "description": "Newsletter email subscribers captured from footer dispatches"
+    }
+  }
+}
